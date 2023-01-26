@@ -23,7 +23,7 @@
               <% if user_signed_in? %>
                 <li class="nav-item">
                   <%= link_to(user_path(current_user.id),class: "nav-link text-white") do %>
-                   <i class="far fa-house"></i>
+                   <i class="fas fa-house"></i>
                    <span>Home</span>
                   <% end %>
                 </li>
@@ -35,7 +35,7 @@
                 </li>
                 <li class="nav-item">
                   <%= link_to(books_path,class: "nav-link text-white") do %>
-                   <i class="far fa-book-open"></i>
+                   <i class="fas fa-book-open"></i>
                    <span>Books</span>
                   <% end %>
                 </li>
@@ -48,7 +48,7 @@
               <% else %>
                 <li class="nav-item">
                   <%= link_to(root_path,class: "nav-link text-white") do %>
-                   <i class="far fa-house"></i>
+                   <i class="fas fa-house"></i>
                    <span>Home</span>
                   <% end %>
                 </li>
@@ -76,10 +76,10 @@
         </div>
       </nav>
     </header>
-    <main>
+    <main class ="mb-auto">
     <%= yield %>
     </main>
-    <footer class="text-center">
+    <footer class="text-center m-4">
       CopyRight Infratop.inc
     </footer>
   </body>
