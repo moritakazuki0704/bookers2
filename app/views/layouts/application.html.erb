@@ -2,9 +2,9 @@
 <html>
   <head>
     <title>Bookers2</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -12,7 +12,7 @@
 
   <body class="d-flex flex-column vh-100">
     <header class="bg-dark">
-      <nav class="navbar navbar-expand-lg navbar-light">
+      <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
           <%= link_to 'Bookers',root_path,class: 'navbar-brand p-2 text-white' %>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavdropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,23 +22,65 @@
             <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
                 <li class="nav-item">
-                  <%= link_to user_path(current_user.id) do %>
-                   <i class="fa-regular fa-house text-white"></i>
-                  <% end %>
-                </li>
-                <% else %>
-                <li class="nav-item">
-                  <%= link_to(root_path,class: "text-white") do %>
-                   <i class="fas fa-home"></i>
+                  <%= link_to(user_path(current_user.id),class: "nav-link text-white") do %>
+                   <i class="fa-light fa-house"></i>
                    <span>Home</span>
                   <% end %>
                 </li>
+                <li class="nav-item">
+                  <%= link_to(users_path,class: "nav-link text-white") do %>
+                   <i class="fa-regular fa-users"></i>
+                   <span>Users</span>
                   <% end %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to(books_path,class: "nav-link text-white") do %>
+                   <i class="fa-light fa-book-open"></i>
+                   <span>Books</span>
+                  <% end %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to(destroy_user_session_path,method: :delete,class: "nav-link text-white") do %>
+                   <i class="fa-solid fa-right-from-bracket"></i>
+                   <span>Log out</span>
+                  <% end %>
+                </li>
+              <% else %>
+                <li class="nav-item">
+                  <%= link_to(root_path,class: "nav-link text-white") do %>
+                   <i class="fa-light fa-house"></i>
+                   <span>Home</span>
+                  <% end %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to(about_path,class: "nav-link text-white") do %>
+                   <i class="fa-regular fa-link"></i>
+                   <span>About</span>
+                  <% end %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to(new_user_registration_path,class: "nav-link text-white") do %>
+                   <i class="fa-light fa-user-plus"></i>
+                   <span>Sign up</span>
+                  <% end %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to(new_user_session_path,class: "nav-link text-white") do %>
+                   <i class="fa-solid fa-right-to-bracket"></i>
+                   <span>Log in</span>
+                  <% end %>
+                </li>
+              <% end %>
             </ul>
           </div>
         </div>
       </nav>
     </header>
+    <main>
     <%= yield %>
+    </main>
+    <footer class="text-center">
+      CopyRight Infratop.inc
+    </footer>
   </body>
 </html>
