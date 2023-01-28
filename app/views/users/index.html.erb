@@ -1,12 +1,13 @@
   <div class="card-list-container p-5">
-    <div class="row">
+    <h2 class="text-center">Users List</h2>
+    <div class="row no-gutters">
       <% @users.each do |user| %>
-      <div class="col-lg-4">
-        <div class="card">
+      <div class="col-sm-4 col-lg-3 m-2">
+        <div class="card w-auto">
         <%= image_tag user.get_profile_image(100,100),class: "card-img-top" %>
         <hr>
           <div class="card-body">
-            <h4 class="card-text">name:<%= user.name %></h4>
+            <p class="card-text">name:<%= user.name %></p>
             <hr>
             <%= link_to "show",user_path(user.id) %>
           </div>
