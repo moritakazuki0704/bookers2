@@ -1,7 +1,8 @@
   <div class="card-list-container p-5">
+    <h2 class="card-header">Books List</h2>
     <div class="row no-gutters">
       <% @books.each do |book| %>
-      <div class="col-sm-4 col-lg-3 m-2">
+      <div class="col-sm-4 col-lg-3 p-2">
         <div class="card w-auto">
         <%= image_tag book.user.get_profile_image(100,100),class: "card-img-top" %>
         <hr>
@@ -9,7 +10,7 @@
             <p class="card-title">title:<%= book.title %></p>
             <hr>
             <p class="card-text">body:<%= book.body %></p>
-            <%= link_to "show",books_path(book.id) %>
+            <%= link_to "show",book_path(book.id) %>
           </div>
         </div>
       </div>
