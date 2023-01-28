@@ -15,7 +15,10 @@
             </li>
 
             <div class="card-footer">
-              <%= f.submit "Update book" %>
+              <%= f.submit "Update book" %><br>
+              <hr>
+              <%= link_to "show",book_path(@book.id), class: "pr-3" %>
+              / <%= link_to "back",books_path,class: "pl-3" %>
             </div>
           <% end %>
       </div>
