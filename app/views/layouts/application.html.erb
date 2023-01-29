@@ -23,7 +23,7 @@
               <% if user_signed_in? %>
                 <li class="nav-item">
                   <%= link_to(user_path(current_user.id),class: "nav-link text-white") do %>
-                   <i class="fas fa-house"></i>
+                   <i class="fas fa-home"></i>
                    <span>Home</span>
                   <% end %>
                 </li>
@@ -41,14 +41,14 @@
                 </li>
                 <li class="nav-item">
                   <%= link_to(destroy_user_session_path,method: :delete,class: "nav-link text-white") do %>
-                   <i class="fas fa-sign-out"></i>
+                   <i class="fas fa-sign-out-alt"></i>
                    <span>Log out</span>
                   <% end %>
                 </li>
               <% else %>
                 <li class="nav-item">
                   <%= link_to(root_path,class: "nav-link text-white") do %>
-                   <i class="fas fa-house"></i>
+                   <i class="fas fa-home"></i>
                    <span>Home</span>
                   <% end %>
                 </li>
@@ -66,7 +66,7 @@
                 </li>
                 <li class="nav-item">
                   <%= link_to(new_user_session_path,class: "nav-link text-white") do %>
-                   <i class="fas fa-sign-in"></i>
+                   <i class="fas fa-sign-in-alt"></i>
                    <span>Log in</span>
                   <% end %>
                 </li>
