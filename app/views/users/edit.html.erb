@@ -1,28 +1,28 @@
 <div class="container">
-  <div class="card w-75 mx-auto mt-3 shadow-lg">
-    <h2 class="card-header">User info</h2>
-    <div class="card-body">
-      <div class="row no-gutters list-group list-group-flush">
-          <%= form_with model: @user,url: user_path(@user.id),method: :patch do |f| %>
-            <li class="list-group-item">
-              <%= f.label :name %><br />
-              <%= f.text_field :name, autofocus: true, autocomplete: "name",class: "form-control" %>
-            </li>
+  <div class="row no-gutters">
+    <div class="col-md-5 col-sm-10 mx-2 mx-sm-auto shadow-lg rounded px-0 my-5">
+      <h2 class="card-header">User info</h2>
+      <div class="form-body p-4">
+        <%= form_with model: @user,url: user_path(@user.id),method: :patch do |f| %>
+          <li class="field list-group-item">
+            <%= f.label :name %><br />
+            <%= f.text_field :name, autofocus: true, autocomplete: "name",class: "form-control" %>
+          </li>
 
-            <li class="list-group-item">
-              <%= f.label :profile_image %><br />
-              <%= f.file_field :profile_image,accept: "image/*",class: "form-control-file" %>
-            </li>
+          <li class="field list-group-item">
+            <%= f.label :profile_image %><br />
+            <%= f.file_field :profile_image,accept: "image/*",class: "form-control-file" %>
+          </li>
 
-            <li class="list-group-item">
-              <%= f.label :introduction %><br />
-              <%= f.text_area :introduction,autofocus: true,rows: "3",class: "form-control" %>
-            </li>
+          <li class="field list-group-item mb-4">
+            <%= f.label :introduction %><br />
+            <%= f.text_area :introduction,autofocus: true,rows: "3",class: "form-control" %>
+          </li>
 
-            <div class="card-footer">
-              <%= f.submit "Update user" %>
-            </div>
-          <% end %>
+          <div class="actions card-footer pb-2">
+            <%= f.submit "Update user",class: "btn btn-lg btn-block btn-info" %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
