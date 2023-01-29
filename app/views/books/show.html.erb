@@ -8,9 +8,13 @@
       <table class="table">
         <thead>
           <tr>
-            <th></th>
+            <th>user</th>
             <th>title</th>
             <th>body</th>
+            <% if @book.user.id == current_user.id %>
+              <th></th>
+              <th></th>
+            <% end %>
           </tr>
         </thead>
         <tbody>
