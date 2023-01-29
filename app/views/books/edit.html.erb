@@ -4,6 +4,7 @@
       <h2 class="card-header">Book Edit</h2>
       <div class="form-body p-4">
         <%= form_with model: @book,url: book_path(@book.id),method: :patch do |f| %>
+          <%= render 'devise/shared/error_messages', resource: @book %>
           <li class="field list-group-item">
             <%= f.label :title %><br />
             <%= f.text_field :title, autofocus: true,class: "form-control" %>

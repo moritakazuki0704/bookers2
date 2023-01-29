@@ -4,6 +4,7 @@
       <h2 class="card-header">User info</h2>
       <div class="form-body p-4">
         <%= form_with model: @user,url: user_path(@user.id),method: :patch do |f| %>
+          <%= render 'devise/shared/error_messages', resource: @user %>
           <li class="field list-group-item">
             <%= f.label :name %><br />
             <%= f.text_field :name, autofocus: true, autocomplete: "name",class: "form-control" %>
