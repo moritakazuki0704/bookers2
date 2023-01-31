@@ -30,10 +30,8 @@ class UsersController < ApplicationController
   end
 
   def ensure_user
-    @user = User.find(params[:id])
-    unless @user == current_user
-      redirect_to  users_path
-    end
+    @user = User.find_by(id: params[current_user])
+    redirect_to  users_path unless @user
   end
 
 end
