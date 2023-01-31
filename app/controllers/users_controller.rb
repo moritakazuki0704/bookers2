@@ -1,12 +1,14 @@
 class UsersController < ApplicationController
 
-  before_action :ensure_user,only:[:edit,:update]
+  before_action :set_user,except:[:index]
 
   def edit
+    unless @user == current_user
+      redirect_to user_path(current_user.id)
+    end
   end
 
   def show
-    @user = User.find(params[:id])
   end
 
   def index
@@ -29,9 +31,8 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name,:profile_image,:introduction)
   end
 
-  def ensure_user
-    @user = User.find_by(id: params[current_user])
-    redirect_to  users_path unless @user
+  def set_user
+    @user = User.find(params[:id])
   end
 
 end

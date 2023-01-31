@@ -14,10 +14,8 @@
     </tbody>
   </table>
   <div class="card-link">
-    <% if user.id == current_user.id %>
-      <%= link_to edit_user_path(user.id) do %>
-        <button class="btn btn-sm btn-block btn-info" ><i class="fas fa-user-cog"></i></button>
-      <% end %>
+    <%= link_to edit_user_path(user.id) do %>
+      <button class="btn btn-sm btn-block btn-info" ><i class="fas fa-user-cog"></i></button>
     <% end %>
   </div>
   <hr>
@@ -34,7 +32,7 @@
     </li>
 
     <div class="actions card-footer list-group-item pb-2 ">
-      <%= f.submit 'Create book' ,class: "btn btn-lg btn-block btn-info" %>
+      <%= f.submit 'Create Book' ,class: "btn btn-lg btn-block btn-info" %>
     </div>
 
   <% end %>

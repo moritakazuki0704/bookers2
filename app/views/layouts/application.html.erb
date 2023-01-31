@@ -76,10 +76,10 @@
         </div>
       </nav>
     </header>
-    <% flash.each do |message_type, message| %>
-      <h4 class="p-3 mb-2 bg-success text-white text-center">
-        <%= content_tag :div, message, class: message_type %>
-      </h4>
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
     <% end %>
     <main class ="mb-auto">
     <%= yield %>
